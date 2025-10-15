@@ -281,3 +281,50 @@ body {
 .center { text-align: center; margin-top: 22px; }
 .back-home { margin-top: 6px; display: inline-block; }
 .contact-note { color: var(--muted); margin: 12px 0 0; }
+
+
+
+/* === Center the hero content again === */
+.uefn-hero .wrap {
+  text-align: center;            /* center headings + text */
+}
+.hero-card {
+  max-width: 900px;
+  margin: 0 auto;                /* center the card block */
+  text-align: center;
+}
+.features {
+  justify-items: center;         /* center bullets grid */
+}
+
+/* === Center the compact footer === */
+.uefn-footer {
+  text-align: center;
+}
+.footer-wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === License page: keep cards side-by-side on desktop === */
+.license-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;    /* single column on small screens */
+}
+
+/* show 2 columns earlier; adjust breakpoint as you like (e.g., 720px) */
+@media (min-width: 800px) {
+  .license-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* make the cards equal height and look tidy */
+.license-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.license-card .list { margin-bottom: 8px; }
+.license-card .links { margin-top: auto; } /* push links to bottom for symmetry */
