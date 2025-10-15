@@ -121,40 +121,36 @@ body {
 @media(max-width:520px){.features{grid-template-columns:1fr;}}
 
 /* ===== Footer / License ===== */
-.uefn-license {
-  background:linear-gradient(160deg,var(--bg2),#070712);
-  padding:56px 20px;
-  border-top:1px solid var(--border);
-  color:var(--text);
+/* ===== Compact Footer ===== */
+.uefn-footer {
+  background: linear-gradient(180deg, var(--bg2), #060610);
+  border-top: 1px solid var(--border);
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
-.uefn-license .wrap {max-width:900px;margin:auto;line-height:1.7;}
-.uefn-license h2 {
-  text-align:center;font-size:clamp(1.4rem,2.4vw,2.1rem);
-  font-weight:800;letter-spacing:.4px;
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  text-shadow:var(--glow);
+.footer-wrap {
+  max-width: 900px;
+  margin: 0 auto;
 }
-.uefn-license h3 {margin:1rem 0 .5rem;color:#fff;}
-.uefn-license p {color:var(--muted);}
-.uefn-license a {
-  color:#c8e9ff;text-decoration:none;border-bottom:1px dashed rgba(200,233,255,0.6);
+.footer-credit {
+  margin: 0 0 8px;
+  color: #e0e4ff;
+  font-weight: 600;
 }
-.uefn-license a:hover {color:#fff;border-bottom-color:transparent;}
-.footer-line {
-  border:none;border-top:1px dashed rgba(255,255,255,0.2);margin:2em 0;
+.footer-license a {
+  color: #9bdcff;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(200,233,255,0.4);
+  transition: all 0.2s ease;
 }
-.license-note {
-  font-size:0.9rem;color:var(--muted);line-height:1.7;
-  max-width:850px;margin:0 auto;opacity:0.92;
+.footer-license a:hover {
+  color: #fff;
+  border-bottom-color: transparent;
+  text-shadow: 0 0 8px rgba(56,189,248,0.5);
 }
-.license-note p {
-  margin:0 0 1.4em;
-  background:linear-gradient(90deg,rgba(139,92,246,0.08),rgba(56,189,248,0.06));
-  padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
-  box-shadow:0 0 10px rgba(56,189,248,0.15);
+.footer-license span {
+  color: rgba(255,255,255,0.2);
+  padding: 0 4px;
 }
-.license-note strong {color:#eaf4ff;}
-.license-note a {
-  color:#c8e9ff;text-decoration:none;
-  border
