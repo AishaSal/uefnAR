@@ -1,1 +1,219 @@
 
+/* ===== Shared Theme (Header + Footer) ===== */
+:root {
+  --bg1: #0b0b14;
+  --bg2: #0b1030;
+  --accent1: #8b5cf6;
+  --accent2: #38bdf8;
+  --text: #e7e8ff;
+  --muted: #b8c0ee;
+  --border: rgba(255, 255, 255, 0.14);
+  --glow: 0 0 22px rgba(139,92,246,0.35), 0 0 28px rgba(56,189,248,0.22);
+  --radius: 16px;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, "Tajawal", "Cairo", "Noto Sans Arabic", Arial;
+  background: radial-gradient(1200px 600px at 10% -20%, rgba(139,92,246,0.25), transparent 60%),
+              radial-gradient(900px 500px at 100% 0%, rgba(56,189,248,0.22), transparent 60%),
+              linear-gradient(165deg, var(--bg1) 0%, var(--bg2) 100%);
+  direction: rtl;
+}
+
+/* ===== NAV / HEADER ===== */
+.uefn-hero {
+  position: relative;
+  padding: 24px 20px 64px;
+  background: radial-gradient(1200px 600px at 10% -20%, rgba(139,92,246,0.25), transparent 60%),
+              radial-gradient(900px 500px at 100% 0%, rgba(56,189,248,0.22), transparent 60%),
+              linear-gradient(165deg, var(--bg1) 0%, var(--bg2) 100%);
+  overflow: hidden;
+}
+.uefn-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(transparent 23px, rgba(255,255,255,0.035) 24px),
+    linear-gradient(90deg, transparent 23px, rgba(255,255,255,0.035) 24px);
+  background-size: 24px 24px;
+  opacity: .35;
+  mix-blend-mode: overlay;
+}
+.orb {
+  position: absolute;
+  filter: blur(24px);
+  opacity: .5;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.orb-a {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(139,92,246,0.6), transparent 60%);
+  left: -80px; top: -60px;
+  animation: float 10s ease-in-out infinite;
+}
+.orb-b {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(56,189,248,0.55), transparent 60%);
+  right: 5%; top: 10%;
+  animation: float 13s ease-in-out infinite reverse;
+}
+.orb-c {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(168,85,247,0.45), transparent 60%);
+  left: 35%; bottom: -40px;
+  animation: float 16s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* nav */
+.uefn-nav {
+  max-width: 1100px;
+  margin: 0 auto 18px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.uefn-nav .brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: var(--glow);
+  text-decoration: none;
+}
+.uefn-nav .logo { font-size: 1.3rem; }
+.uefn-nav .dot { color: #9bdcff; text-shadow: 0 0 12px rgba(56,189,248,0.6); }
+.uefn-nav .tag { font-size: 0.95rem; opacity: 0.9; }
+.uefn-nav .nav-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.uefn-nav .ghost {
+  color: #cfe8ff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+.uefn-nav .ghost:hover {
+  border-color: rgba(200,233,255,0.35);
+  background: rgba(255,255,255,0.04);
+}
+.uefn-nav .cta {
+  color: #0a0b14;
+  background: linear-gradient(90deg, #a78bfa, #38bdf8);
+  padding: 9px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 10px 26px rgba(56,189,248,0.20), 0 0 18px rgba(139,92,246,0.30);
+}
+.uefn-nav .cta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  transition: .15s ease;
+}
+
+/* hero text */
+.wrap { max-width: 900px; margin: 0 auto; }
+.hero-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), var(--glow);
+  padding: 22px 24px 18px;
+  backdrop-filter: blur(6px);
+}
+.hero-card h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: var(--glow);
+}
+.hero-card p { color: var(--muted); margin: 8px 0 16px; }
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn.primary {
+  color: #0a0b14;
+  background: linear-gradient(90deg, #a78bfa, #38bdf8);
+  box-shadow: 0 10px 26px rgba(56,189,248,0.18), 0 0 18px rgba(139,92,246,0.28);
+}
+.btn.secondary {
+  color: #cfe8ff;
+  border: 1px solid rgba(200,233,255,0.35);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.25);
+}
+.btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 14px;
+}
+.features li { color: #d7e6ff; opacity: .95; }
+@media (max-width: 520px) {
+  .features { grid-template-columns: 1fr; }
+}
+
+/* ===== FOOTER ===== */
+.uefn-license {
+  background: linear-gradient(160deg, var(--bg2), #070712);
+  padding: 56px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+.uefn-license .wrap { max-width: 900px; margin: auto; line-height: 1.7; }
+.uefn-license h2 {
+  text-align: center;
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: .4px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: var(--glow);
+}
+.uefn-license h3 {
+  margin: 1rem 0 0.5rem;
+  color: #fff;
+}
+.uefn-license p { color: var(--muted); }
+.uefn-license a {
+  color: #c8e9ff;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(200,233,255,0.6);
+}
+.uefn-license a:hover {
+  color: #fff;
+  border-bottom-color: transparent;
+}
